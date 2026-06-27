@@ -1,0 +1,6 @@
+.venv/
+__pycache__/
+.env
+playlist_tracks.json
+.cache
+*.pyc
