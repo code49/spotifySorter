@@ -19,12 +19,11 @@ It supports full, initial sorting as well as smart **incremental syncs**—allow
 ---
 
 ## Project Structure
-
-- **[spotify_sorter.py](file:///home/dchan/personal-work/spotifySorter/spotify_sorter.py)**: The main script handling Spotify Web API requests, CLI parsing, AI prompt formatting, diffing logic, and state management.
-- **[shell.nix](file:///home/dchan/personal-work/spotifySorter/shell.nix)**: The Nix shell configuration pinning Python and its dependencies (`spotipy` and `python-dotenv`).
-- **[requirements.txt](file:///home/dchan/personal-work/spotifySorter/requirements.txt)**: Python package dependencies (for non-Nix users).
-- **[states/](file:///home/dchan/personal-work/spotifySorter/states/)**: Dedicated folder tracking the sorted track states mapped to their Spotify playlist IDs.
-- **[playlist_tracks.json](file:///home/dchan/personal-work/spotifySorter/playlist_tracks.json)**: Cache containing details of the last fetched playlist (excluded from version control).
+- **[spotify_sorter.py](spotify_sorter.py)**: The main script handling Spotify Web API requests, CLI parsing, AI prompt formatting, diffing logic, and state management.
+- **[shell.nix](shell.nix)**: The Nix shell configuration pinning Python and its dependencies (`spotipy` and `python-dotenv`).
+- **[requirements.txt](requirements.txt)**: Python package dependencies (for non-Nix users).
+- **[states/](states/)**: Dedicated folder tracking the sorted track states mapped to their Spotify playlist IDs.
+- **[playlist_tracks.json](playlist_tracks.json)**: Cache containing details of the last fetched playlist (excluded from version control).
 
 ---
 

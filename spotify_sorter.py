@@ -134,9 +134,9 @@ def update_description_timestamp(description):
     """Strips any existing ' (Last sorted: ...)' tag and appends a new one with the current timestamp."""
     if not description:
         description = "[ai sorted]"
-    clean_desc = re.sub(r"\s*\(Last sorted: \d{4}-\d{2}-\d{2} \d{2}:\d{2}\)", "", description.strip())
+    clean_desc = re.sub(r"\s*\(Last sorted: \d{4}-\d{2}-\d{2} \d{2}:\d{2}\)", "", description.strip(), flags=re.IGNORECASE)
     now_str = datetime.now().strftime("%Y-%m-%d %H:%M")
-    return f"{clean_desc} (Last sorted: {now_str})"
+    return f"{clean_desc} (Last sorted: {now_str})".lower()
 
 def add_playlist_items(sp, playlist_id, uris, position=None):
     """Adds tracks to a playlist using the modern '/items' endpoint to avoid 403 errors."""
@@ -300,12 +300,14 @@ def parse_proposed_playlists(raw_ai_output, tracks):
         description = pl.get("description", "")
         track_ids = pl.get("track_ids", [])
         
-        # Ensure description starts with '[ai sorted]'
-        desc_stripped = description.strip()
+        # Ensure description starts with '[ai sorted]' and is completely lowercase
+        desc_stripped = description.strip().lower()
         if desc_stripped and not desc_stripped.startswith("[ai sorted]"):
             description = f"[ai sorted] {desc_stripped}"
         elif not desc_stripped:
             description = "[ai sorted]"
+        else:
+            description = desc_stripped
             
         pl_tracks = []
         for tid in track_ids:
