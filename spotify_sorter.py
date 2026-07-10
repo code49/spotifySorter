@@ -203,6 +203,72 @@ def save_sorting_state(input_playlist_id, input_playlist_name, created_playlists
     except Exception as e:
         print(f"Failed to save sorting state: {e}")
 
+def prompt_git_commit_and_push(playlist_id, playlist_name):
+    """Asks the user if they want to commit the state file and push it to GitHub."""
+    if not playlist_id:
+        return
+    
+    filename = os.path.join(STATES_DIR, f"sorting_state_{playlist_id}.json")
+    if not os.path.exists(filename):
+        return
+
+    # Check if git is available and if we are inside a git repository
+    try:
+        subprocess.run(
+            ["git", "rev-parse", "--is-inside-work-tree"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=True
+        )
+    except (subprocess.CalledProcessError, FileNotFoundError):
+        return
+
+    try:
+        # Check if the specific state file has changes (modified or untracked)
+        result = subprocess.run(
+            ["git", "status", "--porcelain", filename],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            check=True
+        )
+        if not result.stdout.strip():
+            return
+    except subprocess.CalledProcessError:
+        return
+
+    # If we reach here, there are changes to the state file.
+    print(f"\nDetected changes to sorting state file: {filename}")
+    confirm = input("Would you like to commit the state and push it to GitHub? (y/n): ").strip().lower()
+    if confirm == 'y':
+        try:
+            # 1. Stage the state file
+            print(f"Staging {filename}...")
+            subprocess.run(["git", "add", filename], check=True)
+            
+            # 2. Commit the state file
+            commit_message = f"Update sorting state for playlist '{playlist_name}'"
+            print(f"Committing changes: \"{commit_message}\"...")
+            subprocess.run(["git", "commit", "-m", commit_message], check=True)
+            
+            # 3. Push to upstream branch
+            branch_result = subprocess.run(
+                ["git", "branch", "--show-current"],
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                text=True,
+                check=True
+            )
+            current_branch = branch_result.stdout.strip()
+            remote_branch = current_branch if current_branch else "master"
+            
+            print(f"Pushing to GitHub (origin {remote_branch})...")
+            subprocess.run(["git", "push", "origin", remote_branch], check=True)
+            print("Successfully committed and pushed state to GitHub!")
+        except subprocess.CalledProcessError as e:
+            print(f"\nGit operation failed: {e}")
+            print("Please resolve manually or verify your SSH/HTTPS authentication credentials.")
+
 def query_ai_for_sorting(tracks, query_instruction=None, existing_playlists=None):
     """Invokes the Antigravity CLI to categorize tracks based on user query instructions."""
     # Construct a compact track list for the prompt to conserve context space
@@ -402,6 +468,42 @@ def create_spotify_playlists(sp, proposed_playlists):
             
     return created_playlists_state
 
+def list_previously_sorted_playlists():
+    """Reads all sorting state files and returns a list of dictionaries with info."""
+    if not os.path.exists(STATES_DIR):
+        return []
+    playlists = []
+    for filename in os.listdir(STATES_DIR):
+        if filename.startswith("sorting_state_") and filename.endswith(".json"):
+            filepath = os.path.join(STATES_DIR, filename)
+            try:
+                with open(filepath, "r", encoding="utf-8") as f:
+                    state = json.load(f)
+                    playlists.append({
+                        "id": state.get("input_playlist_id"),
+                        "name": state.get("input_playlist_name", "Unknown Name"),
+                        "sub_playlists_count": len(state.get("created_playlists", []))
+                    })
+            except Exception:
+                pass
+    playlists.sort(key=lambda x: x["name"].lower())
+    return playlists
+
+def get_cached_playlist_info(output_file):
+    """Loads metadata about the cached playlist if it exists."""
+    if os.path.exists(output_file):
+        try:
+            with open(output_file, "r", encoding="utf-8") as f:
+                data = json.load(f)
+                return {
+                    "playlist_name": data.get("playlist_name", "Cached Playlist"),
+                    "playlist_id": data.get("playlist_id"),
+                    "tracks_count": len(data.get("tracks", []))
+                }
+        except Exception:
+            pass
+    return None
+
 def main():
     parser = argparse.ArgumentParser(description="Read, capture, and sort a Spotify playlist into subset playlists.")
     parser.add_argument(
@@ -428,14 +530,93 @@ def main():
     tracks = []
     playlist_name = "Cached Playlist"
     playlist_id = None
-    
-    # Check if we should load cached tracks or fetch fresh ones
     use_cache = False
-    if not args.playlist and os.path.exists(args.output):
-        print(f"No playlist provided, but found cached tracks in: {args.output}")
-        choice = input("Would you like to load from this cache file? (y/n): ").strip().lower()
-        if choice == 'y':
-            use_cache = True
+    
+    # Check if a playlist was provided via CLI
+    if args.playlist:
+        playlist_id = extract_playlist_id(args.playlist)
+    else:
+        # Show interactive menu
+        previously_sorted = list_previously_sorted_playlists()
+        cached_info = get_cached_playlist_info(args.output)
+        
+        print("\n" + "="*50)
+        print("          SPOTIFY PLAYLIST SORTER MENU")
+        print("="*50)
+        
+        options = []
+        
+        # 1. Previously sorted playlists
+        if previously_sorted:
+            print("\nPreviously Sorted Playlists:")
+            for pl in previously_sorted:
+                options.append({
+                    "type": "sorted",
+                    "id": pl["id"],
+                    "name": pl["name"],
+                    "display": f"Re-scan & sync: '{pl['name']}' ({pl['id']}) - {pl['sub_playlists_count']} sub-playlists"
+                })
+        
+        # 2. Cached playlist option
+        if cached_info and cached_info.get("playlist_id"):
+            options.append({
+                "type": "cache",
+                "id": cached_info["playlist_id"],
+                "name": cached_info["playlist_name"],
+                "display": f"Load last fetched from local cache: '{cached_info['playlist_name']}' ({cached_info['tracks_count']} tracks)"
+            })
+            
+        # 3. New playlist option
+        options.append({
+            "type": "new",
+            "display": "Sort a new playlist (from URL, URI, or ID)"
+        })
+        
+        # 4. Exit option
+        options.append({
+            "type": "exit",
+            "display": "Exit"
+        })
+        
+        # Display menu options
+        for idx, opt in enumerate(options, 1):
+            print(f"  [{idx}] {opt['display']}")
+        print("="*50)
+        
+        try:
+            choice = input(f"\nSelect an option (1-{len(options)}): ").strip()
+            if not choice.isdigit():
+                print("Invalid input. Exiting.")
+                sys.exit(1)
+            
+            choice_idx = int(choice) - 1
+            if choice_idx < 0 or choice_idx >= len(options):
+                print("Invalid option. Exiting.")
+                sys.exit(1)
+                
+            selected_opt = options[choice_idx]
+            
+            if selected_opt["type"] == "sorted":
+                playlist_id = selected_opt["id"]
+                playlist_name = selected_opt["name"]
+                print(f"\nRe-scanning playlist: '{playlist_name}'...")
+            elif selected_opt["type"] == "cache":
+                playlist_id = selected_opt["id"]
+                playlist_name = selected_opt["name"]
+                use_cache = True
+                print(f"\nLoading '{playlist_name}' from cache...")
+            elif selected_opt["type"] == "new":
+                playlist_input = input("\nEnter Spotify Playlist URL, URI, or ID: ").strip()
+                if not playlist_input:
+                    print("Error: No playlist provided.")
+                    sys.exit(1)
+                playlist_id = extract_playlist_id(playlist_input)
+            else:
+                print("Exiting.")
+                sys.exit(0)
+        except (KeyboardInterrupt, SystemExit):
+            print("\nExiting.")
+            sys.exit(0)
             
     if use_cache:
         try:
@@ -450,15 +631,13 @@ def main():
             use_cache = False
             
     if not use_cache:
-        # Prompt for playlist if not provided via command line
-        playlist_input = args.playlist
-        if not playlist_input:
+        # Prompt for playlist if not provided via command line/menu
+        if not playlist_id:
             playlist_input = input("Enter Spotify Playlist URL, URI, or ID: ").strip()
             if not playlist_input:
                 print("Error: No playlist provided.")
                 sys.exit(1)
-                
-        playlist_id = extract_playlist_id(playlist_input)
+            playlist_id = extract_playlist_id(playlist_input)
         
         print("Authenticating with Spotify...")
         try:
@@ -597,6 +776,7 @@ def main():
             if choice == 'y':
                 state = None
             else:
+                prompt_git_commit_and_push(playlist_id, playlist_name)
                 print("Exiting.")
                 sys.exit(0)
                 
@@ -725,6 +905,7 @@ def main():
                         print("\nCancelled.")
             else:
                 print("\nNo new tracks to sort.")
+            prompt_git_commit_and_push(playlist_id, playlist_name)
             sys.exit(0)
             
     # Determine if we should perform AI sorting (first time or force resort)
@@ -776,6 +957,8 @@ def main():
             print("\nAll done!")
         else:
             print("\nPlaylist creation cancelled.")
+        
+        prompt_git_commit_and_push(playlist_id, playlist_name)
 
 if __name__ == "__main__":
     main()

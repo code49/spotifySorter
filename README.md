@@ -59,15 +59,36 @@ Choose one of the two options depending on your setup:
 
 ## Usage Guide
 
-### Step 1: Capture & Cache Playlist Details
-Fetches all track data, handling Spotify pagination, and saves a local cache:
+The script can be run in two modes: **Interactive Menu** (recommended for general use) or **Direct Command Line**.
+
+---
+
+### Mode A: Interactive Menu (Recommended)
+
+Simply run the script without any playlist arguments to bring up the interactive console:
+```bash
+python spotify_sorter.py
+```
+This displays a menu allowing you to:
+1. **Re-scan & sync** a previously-sorted playlist (loaded dynamically from your local `states/` files).
+2. **Load from cache** (using details from the last fetched playlist).
+3. **Sort a new playlist** by inputting a Spotify URL, URI, or ID.
+
+---
+
+### Mode B: Direct Command Line
+
+If you prefer bypass-menu automation or want to pass specific flags:
+
+#### Step 1: Capture & Cache Playlist Details
+Fetches all track data and saves a local cache:
 ```bash
 python spotify_sorter.py https://open.spotify.com/playlist/YOUR_PLAYLIST_ID_HERE
 ```
 *Note: On your first run, your browser will open to ask you to authorize your app.*
 
-### Step 2: Sort the Tracks
-Run the script in sorting mode. You can load directly from your cache instead of fetching Spotify again:
+#### Step 2: Sort the Tracks
+Run the script in sorting mode. You can specify custom sorting instructions or let the AI automatically decide:
 ```bash
 # Let AI automatically decide the categories
 python spotify_sorter.py --sort
@@ -77,12 +98,8 @@ python spotify_sorter.py --query "group by decade"
 ```
 The script will display a preview of the proposed sub-playlists. Type `y` when prompted to create them as **private playlists** on your Spotify account.
 
-### Step 3: Run Incremental Syncs
-If you add or delete tracks in your source playlist over time, simply re-run standard capture. The script will compare the updated source tracks against your saved states under `states/` and output a diff:
-```bash
-python spotify_sorter.py https://open.spotify.com/playlist/YOUR_PLAYLIST_ID_HERE
-```
-It will guide you through:
+#### Step 3: Run Incremental Syncs
+If you add or delete tracks in your source playlist over time, re-run with the playlist URL or use the interactive menu. The script compares the updated source tracks against your saved state files under `states/` and will guide you through:
 1. **Cleanups**: Removing any tracks on Spotify that were deleted from the source playlist.
 2. **Incremental Sorting**: Sending *only* the new tracks to `agy` along with a list of your existing categories to place them.
 3. **Sync Reconciliation**: Prompting you to revert or accept changes if the sorted playlists on Spotify were edited manually.

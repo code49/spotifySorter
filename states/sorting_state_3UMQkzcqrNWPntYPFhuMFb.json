@@ -47,7 +47,7 @@
     {
       "name": "indie-rock",
       "id": "0z8JdXUlktWvSYF0Qna5pK",
-      "description": "[ai sorted] alternative and indie rock hits. energizing guitars, punchy drums, and iconic indie/pop-punk anthems. (last sorted: 2026-07-02 10:27)",
+      "description": "[ai sorted] alternative and indie rock hits. energizing guitars, punchy drums, and iconic indie/pop-punk anthems. (last sorted: 2026-07-10 13:38)",
       "track_ids": [
         "3dPQuX8Gs42Y7b454ybpMR",
         "27L8sESb3KR79asDUBu8nW",
@@ -69,13 +69,15 @@
         "6nTiIhLmQ3FWhvrGafw2zj",
         "6L89mwZXSOwYl76YXfX13s",
         "1gugDOSMREb34Xo0c1PlxM",
-        "4Zy6m1QjUivLl8Zt7E8uxr"
+        "4Zy6m1QjUivLl8Zt7E8uxr",
+        "7yNf9YjeO5JXUE3JEBgnYc",
+        "00Mb3DuaIH1kjrwOku9CGU"
       ]
     },
     {
       "name": "indie-pop",
       "id": "4nkhSWdEbMyyDY7MRD74Lw",
-      "description": "[ai sorted] bright and breezy indie pop. mid-tempo, melody-driven indie tracks, acoustic elements, and feel-good tunes. (last sorted: 2026-07-02 10:27)",
+      "description": "[ai sorted] bright and breezy indie pop. mid-tempo, melody-driven indie tracks, acoustic elements, and feel-good tunes. (last sorted: 2026-07-08 20:36)",
       "track_ids": [
         "4LRPiXqCikLlN15c3yImP7",
         "6QgjcU0zLnzq5OrUoSZ3OK",
@@ -97,13 +99,14 @@
         "5yvVYFDUpbnjcnRBgjwTzM",
         "6t6oULCRS6hnI7rm0h5gwl",
         "2iUmqdfGZcHIhS3b9E9EWq",
-        "751srcHf5tUqcEa9pRCQwP"
+        "751srcHf5tUqcEa9pRCQwP",
+        "4T6FWA703h6H7zk1FoSARw"
       ]
     },
     {
       "name": "dance-pop",
       "id": "5om2OcOVxsLWEMATAAUWrD",
-      "description": "[ai sorted] high-energy dance pop and electro-pop. upbeat tempos, synthetic club beats, and high-energy radio hits. (last sorted: 2026-07-02 10:27)",
+      "description": "[ai sorted] high-energy dance pop and electro-pop. upbeat tempos, synthetic club beats, and high-energy radio hits. (last sorted: 2026-07-08 20:36)",
       "track_ids": [
         "38T0tPVZHcPZyhtOcCP7pF",
         "7rglLriMNBPAyuJOMGwi39",
@@ -133,13 +136,20 @@
         "0Mh4zlDsN7s0YMbsas12et",
         "2H1047e0oMSj10dgp7p2VG",
         "1kPpge9JDLpcj15qgrPbYX",
-        "5ZkAx8zjLiSs1nMmBwJoZS"
+        "5ZkAx8zjLiSs1nMmBwJoZS",
+        "6YUTL4dYpB9xZO5qExPf05",
+        "7MmG8p0F9N3C4AXdK6o6Eb",
+        "1gihuPhrLraKYrJMAEONyc",
+        "2vlDrKpOC0eSTqTDRcbYyw",
+        "6qn9YLKt13AGvpq9jfO8py",
+        "42VUCXerQ5qTr4Qp6PhKo4",
+        "2HRqTpkrJO5ggZyyK6NPWz"
       ]
     },
     {
       "name": "mainstream-pop",
       "id": "1509CMfqlQIDup11F1HzO2",
-      "description": "[ai sorted] modern mainstream pop. polished chart-toppers, catchy vocal performances, and rhythmic mid-to-high energy tunes. (last sorted: 2026-07-02 10:27)",
+      "description": "[ai sorted] modern mainstream pop. polished chart-toppers, catchy vocal performances, and rhythmic mid-to-high energy tunes. (last sorted: 2026-07-08 20:36)",
       "track_ids": [
         "7BqBn9nzAq8spo5e7cZ0dJ",
         "0KKkJNfGyhkQ5aFogxQAPU",
@@ -173,7 +183,11 @@
         "793tMto9guBs0X6c44R5mH",
         "1rfofaqEpACxVEHIZBJe6W",
         "72jbDTw1piOOj770jWNeaG",
-        "7kcwFYuOoe3AZ1iIiKmaxp"
+        "7kcwFYuOoe3AZ1iIiKmaxp",
+        "09CtPGIpYB4BrO8qb1RGsF",
+        "3xkHsmpQCBMytMJNiDf3Ii",
+        "2ipIPsgrgd0j2beDf4Ki70",
+        "6Ed1q0X8oSKSm4IIhiQbYg"
       ]
     },
     {
@@ -219,7 +233,7 @@
     {
       "name": "hip-hop",
       "id": "1rvWx1Mikz0rzYUvVZr8t1",
-      "description": "[ai sorted] hip-hop, rap, and modern r&b. heavy basslines, sharp flows, and energetic urban party anthems. (last sorted: 2026-07-02 10:27)",
+      "description": "[ai sorted] hip-hop, rap, and modern r&b. heavy basslines, sharp flows, and energetic urban party anthems. (last sorted: 2026-07-10 13:38)",
       "track_ids": [
         "0CAfXk7DXMnon4gLudAp7J",
         "22skzmqfdWrjJylampe0kt",
@@ -238,7 +252,9 @@
         "0FlcmZ13DGRmscCroro9GO",
         "3B4cjvGlPvyBLNG3AzEgkZ",
         "0eaVIYo2zeOaGJeqZ5TwYz",
-        "7AzlLxHn24DxjgQX73F9fU"
+        "7AzlLxHn24DxjgQX73F9fU",
+        "22LAwLoDA5b4AaGSkg6bKW",
+        "7KXjTSCq5nL1LoYtL7XAwS"
       ]
     },
     {

@@ -18,7 +18,7 @@ pkgs.mkShell {
     echo "Python:   $(python --version)"
     echo "Packages: spotipy, python-dotenv"
     echo ""
-    echo "Run 'python spotify_sorter.py <playlist_url>' to start."
+    echo "Run 'python spotify_sorter.py' to launch the interactive menu."
     echo "========================================================="
   '';
 }
