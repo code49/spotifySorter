@@ -31,7 +31,7 @@
     {
       "name": "dance-pop",
       "id": "4mNJSyrVxRGvWY4SVsGGxE",
-      "description": "[ai sorted] upbeat edm and modern dance pop. high-energy electronic beats, club bangers, and chart-topping synth hits. (last sorted: 2026-07-20 10:39)",
+      "description": "[ai sorted] upbeat edm and modern dance pop. high-energy electronic beats, club bangers, and chart-topping synth hits. (last sorted: 2026-07-23 12:48)",
       "track_ids": [
         "7rglLriMNBPAyuJOMGwi39",
         "2ekn2ttSfGqwhhate0LSR0",
@@ -73,7 +73,8 @@
         "6qn9YLKt13AGvpq9jfO8py",
         "42VUCXerQ5qTr4Qp6PhKo4",
         "2HRqTpkrJO5ggZyyK6NPWz",
-        "6uBhi9gBXWjanegOb2Phh0"
+        "6uBhi9gBXWjanegOb2Phh0",
+        "7MXVkk9YMctZqd1Srtv4MB"
       ]
     },
     {
@@ -145,7 +146,7 @@
     {
       "name": "hip-hop",
       "id": "1IW9ZWu81NIQ10KJBY03ls",
-      "description": "[ai sorted] modern rap, trap, and melodic r&b. heavy basslines, catchy flows, and smooth urban rhythms. (last sorted: 2026-07-20 10:39)",
+      "description": "[ai sorted] modern rap, trap, and melodic r&b. heavy basslines, catchy flows, and smooth urban rhythms. (last sorted: 2026-07-23 12:48)",
       "track_ids": [
         "0CAfXk7DXMnon4gLudAp7J",
         "0KKkJNfGyhkQ5aFogxQAPU",
@@ -170,13 +171,14 @@
         "0eaVIYo2zeOaGJeqZ5TwYz",
         "7AzlLxHn24DxjgQX73F9fU",
         "22LAwLoDA5b4AaGSkg6bKW",
-        "7KXjTSCq5nL1LoYtL7XAwS"
+        "7KXjTSCq5nL1LoYtL7XAwS",
+        "3KEMjT3QVfKIl4E9DIcrmF"
       ]
     },
     {
       "name": "acoustic-chill",
       "id": "3k9Olp484zkKroJ8JBwzuw",
-      "description": "[ai sorted] mellow acoustic, bedroom pop, and chill vibes. relaxing melodies, soft acoustic instruments, and cozy down-tempo tunes. (last sorted: 2026-07-21 11:14)",
+      "description": "[ai sorted] mellow acoustic, bedroom pop, and chill vibes. relaxing melodies, soft acoustic instruments, and cozy down-tempo tunes. (last sorted: 2026-07-23 12:48)",
       "track_ids": [
         "4LRPiXqCikLlN15c3yImP7",
         "4HlFJV71xXKIGcU3kRyttv",
@@ -214,13 +216,15 @@
         "4MagTPnkPiDuIa4P8GtW1b",
         "67ZToNMUVrEPd4LppSTjH7",
         "0GfP2Zkn3XK4n6sURwGgxN",
-        "2uXlHCUbq9OMUwx3hrk06o"
+        "2uXlHCUbq9OMUwx3hrk06o",
+        "6shRGWCtBUOPFLFTTqXZIC",
+        "4LloVtxNZpeh7q7xdi1DQc"
       ]
     },
     {
       "name": "funk-soul",
       "id": "1u8SmDwQwUNQhC1wGwTfaY",
-      "description": "[ai sorted] retro funk, soul, motown, and groovy classics. infectious grooves, brass arrangements, and timeless feel-good rhythms. (last sorted: 2026-07-21 11:14)",
+      "description": "[ai sorted] retro funk, soul, motown, and groovy classics. infectious grooves, brass arrangements, and timeless feel-good rhythms. (last sorted: 2026-07-23 12:48)",
       "track_ids": [
         "2Nz6aF1umHh5Et6I5H581L",
         "7xe3EQCvXnx6Q0zs41Y65n",
@@ -243,13 +247,14 @@
         "5fZJQrFKWQLb7FpJXZ1g7K",
         "5FMXrphygZ4z3gVDHGWxgl",
         "6D8kc7RO0rqBLSo2YPflJ5",
-        "5qII2n90lVdPDcgXEEVHNy"
+        "5qII2n90lVdPDcgXEEVHNy",
+        "3vQ4T78TTMOjQXGfXVKQJo"
       ]
     },
     {
       "name": "anthem-pop",
       "id": "6QmDIYD96haejuhEpvhcek",
-      "description": "[ai sorted] mainstream pop anthems and feel-good radio hits. upbeat singing choruses, bright radio hits, and uplifting pop tunes. (last sorted: 2026-07-21 11:14)",
+      "description": "[ai sorted] mainstream pop anthems and feel-good radio hits. upbeat singing choruses, bright radio hits, and uplifting pop tunes. (last sorted: 2026-07-23 12:48)",
       "track_ids": [
         "38T0tPVZHcPZyhtOcCP7pF",
         "2tpWsVSb9UEmDRxAl1zhX1",
@@ -300,7 +305,8 @@
         "4nVBt6MZDDP6tRVdQTgxJg",
         "5O2P9iiztwhomNh8xkR9lJ",
         "3NLnwwAQbbFKcEcV8hDItk",
-        "5v66VjrhFwSlPqadCrubyb"
+        "5v66VjrhFwSlPqadCrubyb",
+        "1lRmQ9D6oNYiuCXdGlKCs0"
       ]
     }
   ]
