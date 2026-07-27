@@ -5,7 +5,7 @@
     {
       "name": "classic-rock",
       "id": "5Q3G9nqtPfEWt4WfJk5isn",
-      "description": "[ai sorted] high-energy classic rock & heavy anthems. iconic guitar riffs, driving rhythms, and hard-hitting arena rock classics. (last sorted: 2026-07-20 10:39)",
+      "description": "[ai sorted] high-energy classic rock & heavy anthems. iconic guitar riffs, driving rhythms, and hard-hitting arena rock classics. (last sorted: 2026-07-27 10:34)",
       "track_ids": [
         "7snQQk1zcKl8gZ92AnueZW",
         "7EHmKkyAr6MZv5Y2FdZbXw",
@@ -25,13 +25,15 @@
         "40riOy7x9W7GXjyGp4pjAv",
         "0rmGAIH9LNJewFw7nKzZnc",
         "63T7DJ1AFDD6Bn8VzG6JE8",
-        "0GONea6G2XdnHWjNZd6zt3"
+        "0GONea6G2XdnHWjNZd6zt3",
+        "7BY005dacJkbO6EPiOh2wb",
+        "6cFZ4PLC19taNlpl9pbGMf"
       ]
     },
     {
       "name": "dance-pop",
       "id": "4mNJSyrVxRGvWY4SVsGGxE",
-      "description": "[ai sorted] upbeat edm and modern dance pop. high-energy electronic beats, club bangers, and chart-topping synth hits. (last sorted: 2026-07-23 12:48)",
+      "description": "[ai sorted] upbeat edm and modern dance pop. high-energy electronic beats, club bangers, and chart-topping synth hits. (last sorted: 2026-07-27 10:34)",
       "track_ids": [
         "7rglLriMNBPAyuJOMGwi39",
         "2ekn2ttSfGqwhhate0LSR0",
@@ -74,7 +76,9 @@
         "42VUCXerQ5qTr4Qp6PhKo4",
         "2HRqTpkrJO5ggZyyK6NPWz",
         "6uBhi9gBXWjanegOb2Phh0",
-        "7MXVkk9YMctZqd1Srtv4MB"
+        "7MXVkk9YMctZqd1Srtv4MB",
+        "6RUKPb4LETWmmr3iAEQktW",
+        "7DnAm9FOTWE3cUvso43HhI"
       ]
     },
     {
@@ -109,7 +113,7 @@
     {
       "name": "indie-rock",
       "id": "0lRK8l0j5NEbj6LuK6TEVj",
-      "description": "[ai sorted] alternative, indie rock and pop-punk. energetic guitar riffs, garage rock vibes, and rebellious anthem hooks. (last sorted: 2026-07-21 11:14)",
+      "description": "[ai sorted] alternative, indie rock and pop-punk. energetic guitar riffs, garage rock vibes, and rebellious anthem hooks. (last sorted: 2026-07-27 10:34)",
       "track_ids": [
         "3dPQuX8Gs42Y7b454ybpMR",
         "27L8sESb3KR79asDUBu8nW",
@@ -140,7 +144,12 @@
         "00Mb3DuaIH1kjrwOku9CGU",
         "6twjuBZfRJIZnoHrghzWLk",
         "3fRCAPMMZ8l8P9YKI6OCzD",
-        "57RA3JGafJm5zRtKJiKPIm"
+        "57RA3JGafJm5zRtKJiKPIm",
+        "72zZfHPYx43shcP3eKkYi5",
+        "4xdHI4eFNst0vTZuuKrWjr",
+        "5XMjXjwCkJVmk0AHm7z8IV",
+        "1fJFuvU2ldmeAm5nFIHcPP",
+        "458JkK5eJhh4C4s6nTuz7g"
       ]
     },
     {
@@ -178,7 +187,7 @@
     {
       "name": "acoustic-chill",
       "id": "3k9Olp484zkKroJ8JBwzuw",
-      "description": "[ai sorted] mellow acoustic, bedroom pop, and chill vibes. relaxing melodies, soft acoustic instruments, and cozy down-tempo tunes. (last sorted: 2026-07-23 12:48)",
+      "description": "[ai sorted] mellow acoustic, bedroom pop, and chill vibes. relaxing melodies, soft acoustic instruments, and cozy down-tempo tunes. (last sorted: 2026-07-27 10:34)",
       "track_ids": [
         "4LRPiXqCikLlN15c3yImP7",
         "4HlFJV71xXKIGcU3kRyttv",
@@ -218,13 +227,14 @@
         "0GfP2Zkn3XK4n6sURwGgxN",
         "2uXlHCUbq9OMUwx3hrk06o",
         "6shRGWCtBUOPFLFTTqXZIC",
-        "4LloVtxNZpeh7q7xdi1DQc"
+        "4LloVtxNZpeh7q7xdi1DQc",
+        "50kpGaPAhYJ3sGmk6vplg0"
       ]
     },
     {
       "name": "funk-soul",
       "id": "1u8SmDwQwUNQhC1wGwTfaY",
-      "description": "[ai sorted] retro funk, soul, motown, and groovy classics. infectious grooves, brass arrangements, and timeless feel-good rhythms. (last sorted: 2026-07-23 12:48)",
+      "description": "[ai sorted] retro funk, soul, motown, and groovy classics. infectious grooves, brass arrangements, and timeless feel-good rhythms. (last sorted: 2026-07-27 10:34)",
       "track_ids": [
         "2Nz6aF1umHh5Et6I5H581L",
         "7xe3EQCvXnx6Q0zs41Y65n",
@@ -248,13 +258,16 @@
         "5FMXrphygZ4z3gVDHGWxgl",
         "6D8kc7RO0rqBLSo2YPflJ5",
         "5qII2n90lVdPDcgXEEVHNy",
-        "3vQ4T78TTMOjQXGfXVKQJo"
+        "3vQ4T78TTMOjQXGfXVKQJo",
+        "3qI94hINNNeb4S7xQi18lS",
+        "55h7vJchibLdUkxdlX3fK7",
+        "30FURVTCpbKyykjSEQzGkH"
       ]
     },
     {
       "name": "anthem-pop",
       "id": "6QmDIYD96haejuhEpvhcek",
-      "description": "[ai sorted] mainstream pop anthems and feel-good radio hits. upbeat singing choruses, bright radio hits, and uplifting pop tunes. (last sorted: 2026-07-23 12:48)",
+      "description": "[ai sorted] mainstream pop anthems and feel-good radio hits. upbeat singing choruses, bright radio hits, and uplifting pop tunes. (last sorted: 2026-07-27 10:34)",
       "track_ids": [
         "38T0tPVZHcPZyhtOcCP7pF",
         "2tpWsVSb9UEmDRxAl1zhX1",
@@ -306,7 +319,10 @@
         "5O2P9iiztwhomNh8xkR9lJ",
         "3NLnwwAQbbFKcEcV8hDItk",
         "5v66VjrhFwSlPqadCrubyb",
-        "1lRmQ9D6oNYiuCXdGlKCs0"
+        "1lRmQ9D6oNYiuCXdGlKCs0",
+        "5jzKL4BDMClWqRguW5qZvh",
+        "69uxyAqqPIsUyTO8txoP2M",
+        "1mea3bSkSGXuIRvnydlB5b"
       ]
     }
   ]
